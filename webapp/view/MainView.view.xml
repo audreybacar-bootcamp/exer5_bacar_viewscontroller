@@ -2,7 +2,9 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+    xmlns:fragment="sap.ui.core.Fragment"
+    >
 
     <Page id="page" title="{i18n>title}" 		
 		floatingFooter="true"
@@ -29,50 +31,14 @@
                         <Input id="idInputCCNum" value="" visible="false"/>
 
                     </f:content>
+
                 </f:SimpleForm>
             </VBox>
-<Table id="idTableSCart" inset="false">
-                    <headerToolbar>
-                        <OverflowToolbar id="idOFT">
-                            <content>
-                                <Title id="idTableTitleSCart" text="{i18n>shoppingCartLbl}"/>
-                                <ToolbarSpacer id="idTSpacer"/>
-<Button id="idBtnAddItems" icon="sap-icon://cart-4" tooltip="Add to Cart" press="onAddItem"/>
-                            </content>
-                        </OverflowToolbar>
-                    </headerToolbar>
-                    <columns>
-                        <Column id="idCol1">
-                            <Text id="idColText1" text="{i18n>ItemLbl}" />
-                        </Column>
-                        <Column id="idCol2">
-                            <Text id="idColText2" text="{i18n>QuantityLbl}" />
-                        </Column>
-                        <Column id="idCol3">
-                            <Text id="idColText3" text="{i18n>PriceLbl}" />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem id="idColListItem1" vAlign="Middle">
-                            <cells>
-                                <Text id="idText1" text="{i18n>idtext1lbl}" />
-                                <Text id="idText2" text="{i18n>idtext2lbl}" />
-                                <Text id="idText3" text="{i18n>idtext3lbl}" />
-                            </cells>
-                        </ColumnListItem>
-                        <ColumnListItem id="idColListItem2" vAlign="Middle">
-                            <cells>
-                                <Text id="idText4" text="{i18n>idtext4lbl}" />
-                                <Text id="idText5" text="{i18n>idtext5lbl}" />
-                                <Text id="idText6" text="{i18n>idtext6lbl}" />
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
+        <core:Fragment fragmentName="com.training.exer5bacar.fragment.ShoppingCard" type="XML" />
         <footer>
             <OverflowToolbar id="idOFTFooter">
                 <ToolbarSpacer id="idTSpacerFooter"/>
-<Button id="idBtnCheckout" text="{i18n>checkoutButtonLbl}" tooltip="Check Out" press="onPressCheckout"/>
+                <Button id="idBtnCheckout" text="{i18n>checkoutButtonLbl}" tooltip="Check Out" press="onPressCheckout"/>
             </OverflowToolbar>
         </footer>
 
